@@ -1,7 +1,33 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+class Seed
+
+  def self.begin
+    seed = Seed.new
+    seed.generate_beasts
+  end
+
+  def generate_beasts
+    30.times do |i|
+      beast = Beast.create!(
+        daemon: "Hellhound",
+        breed: Faker::Games::WarhammerFantasy.creature,
+        name: Faker::Creature::Dog.name,
+        age: Faker::Number.between(from: 1, to: 1000),
+        desc: Faker::Games::WarhammerFantasy.quote
+      )
+      puts "Beast #{i}: Daemon: #{beast.daemon}, Breed: #{beast.breed}, Name: #{beast.name}, Age: #{beast.age}, Desc: #{beast.desc}."
+    end
+
+    30.times do |i|
+      beast = Beast.create!(
+        daemon: "Shadow Cat",
+        breed: Faker::Games::ElderScrolls.creature,
+        name: Faker::Creature::Cat.name,
+        age: Faker::Number.between(from: 1, to: 1000),
+        desc: Faker::Games::WorldOfWarcraft.quote
+      )
+      puts "Beast #{i}: Daemon: #{beast.daemon}, Breed: #{beast.breed}, Name: #{beast.name}, Age: #{beast.age}, Desc: #{beast.desc}."
+    end
+  end
+end
+
+Seed.begin
