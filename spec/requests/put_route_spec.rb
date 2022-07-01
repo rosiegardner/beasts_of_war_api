@@ -19,6 +19,11 @@ describe 'update a beast route', :type => :request do
     expect(JSON.parse(response.body)['breed']).to eq('wicked lady')
   end
 
+  it 'updates the beasts name' do
+    puts(response.body)
+    expect(JSON.parse(response.body)['name']).to eq('haxan')
+  end
+
   it 'returns a success message' do
     expect(response).to have_http_status(:success)
   end
