@@ -10,4 +10,8 @@ describe "post a beast route", :type => :request do
     expect(JSON.parse(response.body)['daemon']).to eq('hellhound')
   end
 
+  it 'returns the beasts breed' do
+    expect(JSON.parse(response.body)['breed']).to eq('test_breed')
+  end
+
 end
