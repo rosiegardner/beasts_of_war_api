@@ -8,7 +8,7 @@ class Seed
   def generate_beasts
     30.times do |i|
       beast = Beast.create!(
-        daemon: "Hellhound",
+        daemon: "hellhound",
         breed: Faker::Games::WarhammerFantasy.creature,
         name: Faker::Creature::Dog.name,
         age: Faker::Number.between(from: 1, to: 1000),
@@ -19,7 +19,7 @@ class Seed
 
     30.times do |i|
       beast = Beast.create!(
-        daemon: "Shadow Cat",
+        daemon: "shadow cat",
         breed: Faker::Games::ElderScrolls.creature,
         name: Faker::Creature::Cat.name,
         age: Faker::Number.between(from: 1, to: 1000),
