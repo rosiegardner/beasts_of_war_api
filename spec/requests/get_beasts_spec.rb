@@ -12,4 +12,9 @@ describe "get all beasts route", :type => :request do
   it 'returns all beasts' do
     expect(JSON.parse(response.body).size).to eq(60)
   end
+
+  it 'returns one beast' do
+    get '/beasts/1'
+    expect(JSON.parse(response.body).size).to eq(1)
+  end
 end
