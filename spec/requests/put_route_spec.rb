@@ -23,4 +23,9 @@ describe 'update a beast route', :type => :request do
     puts(response.body)
     expect(JSON.parse(response.body)['message']).to eq('This beast has been updated successfully!')
   end
+
+  it 'returns a success message status' do
+    patch "/beasts/#{@beast_id}" , params: { :daemon => 'shadow cat', :breed => "wicked lady", :name => "haxan", :age => 666, :desc => "a demonic cat" }
+    expect(response).to have_http_status(:success)
+  end
 end
