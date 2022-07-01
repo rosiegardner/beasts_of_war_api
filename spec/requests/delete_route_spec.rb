@@ -8,11 +8,8 @@ describe 'destroy a beast route', :type => :request do
     delete "/beasts/#{@beast_id}"
   end
 
-  it 'returns a success status' do
+  it 'returns a success status message' do
     expect(response).to have_http_status(:success)
-  end
-
-  it 'returns a success message' do
     expect(JSON.parse(response.body)['message']).to eq('This beast has been destroyed successfully!')
   end
 end
