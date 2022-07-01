@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "post a beast route", :type => :request do
 
   before do
-    post '/beasts', params: { :daemon => 'hellhound', :breed => "red_witch", :name => "hex", :age => 1, :desc => "test_desc"}
+    post '/beasts', params: { :daemon => 'hellhound', :breed => "red_witch", :name => "hex", :age => 666, :desc => "test_desc"}
   end
 
   it 'returns the beasts daemon' do
@@ -16,6 +16,10 @@ describe "post a beast route", :type => :request do
 
   it 'returns the beasts name' do
     expect(JSON.parse(response.body)['name']).to eq('hex')
+  end
+
+  it 'returns the beasts age' do
+    expect(JSON.parse(response.body)['age']).to eq(666)
   end
 
 end
