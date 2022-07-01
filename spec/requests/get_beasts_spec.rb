@@ -20,6 +20,11 @@ describe "get all beasts route", :type => :request do
     beast_response << JSON.parse(response.body)
     expect(beast_response.size).to eq(1)
   end
+
+  it 'returns 10 beasts at a time' do
+    get '/beasts?page=1'
+    expect(JSON.parse(response.body).size).to eq(10)
+  end
 end
 
 describe "get beast by name" do
