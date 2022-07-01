@@ -26,4 +26,8 @@ describe "post a beast route", :type => :request do
     expect(JSON.parse(response.body)['desc']).to eq('a good dog')
   end
 
+  it 'returns a created status' do
+    expect(response).to have_http_status(:created)
+  end
+
 end
