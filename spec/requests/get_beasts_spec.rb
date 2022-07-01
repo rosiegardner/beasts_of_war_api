@@ -8,4 +8,8 @@ describe "get all beasts route", :type => :request do
   it 'returns status code 200' do
     expect(response).to have_http_status(:success)
   end
+
+  it 'returns all beasts' do
+    expect(JSON.parse(response.body).size).to eq(60)
+  end
 end
