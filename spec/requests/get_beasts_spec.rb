@@ -21,3 +21,16 @@ describe "get all beasts route", :type => :request do
     expect(beast_response.size).to eq(1)
   end
 end
+
+describe "get beast by name" do
+
+  before do
+    post '/beasts', params: { :daemon => 'shadow cat', :breed => "wicked lady", :name => "haxan", :age => 66, :desc => 'a demonic cat'}
+  end
+  
+  it 'searches beast by name' do
+    get '/beasts?name=hax'
+    puts response.body
+    expect(JSON.parse(response.body)[0]['name']).to eq('haxan')
+  end
+end
