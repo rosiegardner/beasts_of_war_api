@@ -25,6 +25,15 @@ class BeastsController < ApplicationController
     end
   end
 
+  def destroy 
+    @beast = Beast.find(params[:id])
+    if @beast.destroy 
+      render status: 200, json: {
+        message: "This beast has been destroyed successfully!"
+      }
+    end
+  end
+
   private
   def beast_params
     params.permit(:daemon, :breed, :name, :age, :desc, :available)
