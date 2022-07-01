@@ -11,4 +11,8 @@ describe 'destroy a beast route', :type => :request do
   it 'returns a success status' do
     expect(response).to have_http_status(:success)
   end
+
+  it 'returns a success message' do
+    expect(JSON.parse(response.body)['message']).to eq('This beast has been destroyed successfully!')
+  end
 end
