@@ -7,5 +7,5 @@ describe 'get a beast route with exception handler', :type => :request do
   it 'returns a RecordNotFound error' do
     expect(response).to have_http_status(:not_found)
   end
-  
+
 end
