@@ -13,8 +13,11 @@ describe "get all beasts route", :type => :request do
     expect(JSON.parse(response.body).size).to eq(60)
   end
 
-  # it 'returns one beast' do
-  #   get '/beasts/1'
-  #   expect(JSON.parse(response.body).size).to eq(1)
-  # end
+  it 'returns a beast by id' do
+    @beast = Beast.create!(:daemon => 'hellhound', :breed => "red_witch", :name => "hex", :age => 666, :desc => "a good dog")
+    get "/beasts/#{@beast.id}"
+    beast_response = []
+    beast_response << JSON.parse(response.body)
+    expect(beast_response.size).to eq(1)
+  end
 end
