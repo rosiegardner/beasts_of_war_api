@@ -1,8 +1,13 @@
 class BeastsController < ApplicationController
 
   def index
-    name = params[:name]
-    @beasts = Beast.search(name)
+    if name = params[:name]
+      @beasts = Beast.search(name)
+    elsif params[:page].present?
+      @beasts = Beast.order('name ASC').paginate(:page => params[:page], per_page:10)
+    else
+      @beasts = Beast.all
+    end
     json_response(@beasts)
   end
 
