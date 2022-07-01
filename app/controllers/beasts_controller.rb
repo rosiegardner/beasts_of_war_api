@@ -1,7 +1,8 @@
 class BeastsController < ApplicationController
 
   def index
-    @beasts = Beast.all
+    name = params[:name]
+    @beasts = Beast.search(name)
     json_response(@beasts)
   end
 
