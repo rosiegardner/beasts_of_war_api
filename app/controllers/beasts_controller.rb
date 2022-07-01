@@ -7,7 +7,6 @@ class BeastsController < ApplicationController
 
   def show 
     @beast = Beast.find(params[:id])
-    # binding.pry
     json_response(@beast)
   end
 
