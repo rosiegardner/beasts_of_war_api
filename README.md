@@ -37,7 +37,7 @@
 | Method |   URL  | Result |
 | :---   | :----: |  -----:  |
 | GET    | `localhost:3000/` | Returns a list of raw json data |
-| GET    | `localhost:3000/beasts` | Returns a list of all Beasts in alphabetical order by name and their parameters => `id`, `daemon`, `breed`, `name`, `age`, `desc, `available` |
+| GET    | `localhost:3000/beasts` | Returns a list of all Beasts in alphabetical order by name and their parameters => `id`, `daemon`, `breed`, `name`, `age`, `desc`, `available` |
 | GET    | `localhost:3000/beasts/6` | Returns all information related to Beast with `id=6` |
 | GET    | `localhost:3000/beasts?name=Mis` | Returns a Beast by `name` or `name ilike?` => 'Misty' |
 | GET    | `localhost:3000/beasts?page=4` | Returns a list of 10 Beasts per page |
