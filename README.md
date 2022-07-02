@@ -53,5 +53,5 @@
 
 MIT
 
-Copyright (c) 2022 Rosie Gardner <rosiegardner78@gmail.com>
+Copyright (c) 2022 Rosie Gardner, Email: <rosiegardner78@gmail.com>
 
