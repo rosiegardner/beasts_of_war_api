@@ -9,6 +9,8 @@
 
 * Ruby
 * Rails
+* Active Record
+* Postgres
 * Gem
 * Faker
 * Pry
@@ -16,8 +18,6 @@
 * Will_Paginate
 * Shoulda-Matchers
 * FactoryBot
-* Active Record
-* Postgres
 
 ## Setup/Installation Requirements
 
