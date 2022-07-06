@@ -35,16 +35,24 @@
 
 ## API Endpoints
 
-| Method |   URL  | Result |
-| :---   | :----: |  -----:  |
-| GET    | `localhost:3000/` | Returns a list of raw json data |
-| GET    | `localhost:3000/beasts` | Returns a list of all Beasts in alphabetical order by name and their parameters => `id`, `daemon`, `breed`, `name`, `age`, `desc`, `available` |
-| GET    | `localhost:3000/beasts/6` | Returns all information related to Beast with `id=6` |
-| GET    | `localhost:3000/beasts?name=Mis` | Returns a Beast by `name` or `name ilike?` => 'Misty' |
-| GET    | `localhost:3000/beasts?page=4` | Returns a list of 10 Beasts per page |
-| POST   | `localhost:3000/beasts?daemon=shadow cat&breed=sabertooth&name=scud&age=666&desc=a foul hunter` | Adds a Beast to the database => `id: 183`, `daemon: shadow cat`, `breed: sabertooth`, `name: scud`, `age: 666`, `desc: "a foul hunter"`, `available: true` => If `POST` is successful, returns database object for newly created Beast. |
-| PUT/PATCH | `localhost:3000/beasts/183?name=scud the slug` | Updates the name for a Beast with `id=183`. If PUT/PATCH is succesful, returns database object for newly updated Beast. |
-| DELETE | `localhost:3000/beasts/183` | Deletes the Beast with `id=183` from database |
+| Method |   URL  | Result | HTTP Status |
+| :---   | :----: |  :-----: | ---: |
+| GET    | `localhost:3000/beasts` | Returns a list of all Beasts in alphabetical order by name and their parameters => `id`, `daemon`, `breed`, `name`, `age`, `desc`, `available` | 200 |
+| GET    | `localhost:3000/beasts/6` | Returns all information related to Beast with `id=6` | 200 |
+| GET    | `localhost:3000/beasts?name=Mis` | Returns a Beast by `name` or `name ilike?` => 'Misty' | 200 |
+| GET    | `localhost:3000/beasts?page=4` | Returns a list of 10 Beasts per page | 200 |
+
+| POST   | `localhost:3000/beasts?daemon=shadow cat&breed=sabertooth&name=scud&age=666&desc=a foul hunter` | Adds a Beast to the database => `daemon: shadow cat`, `breed: sabertooth`, `name: scud`, `age: 666`, `desc: "a foul hunter"`, `available: true` => If `POST` is successful, returns database object for newly created Beast. | 201 |
+
+| PUT/PATCH | `localhost:3000/beasts/183?name=scud the slug` | Updates the name for a Beast with `id=183`. If PUT/PATCH is successful, returns database object for newly updated Beast. | 200 |
+
+| DELETE | `localhost:3000/beasts/183` | Deletes the Beast with `id=183` from database | 200 |
+
+## Common Mistakes
+
+| Method |   URL  | Result | HTTP Status | Excuse |
+| :---   | :----: |  :-----: | :---: | --: |
+| POST   | `localhost:3000/beasts?daemon=shadow cat&breed=sabertooth&age=666&desc=a foul hunter` | Returns `"message": "Validation failed: Name can't be blank"` | 422 | `localhost:3000/beasts?daemon=shadow cat&breed=sabertooth&age=666&desc=a foul hunter` => missing `name` input for Beast |
 
 ## Known Bugs
 
