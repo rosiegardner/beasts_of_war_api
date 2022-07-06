@@ -41,11 +41,8 @@
 | GET    | `localhost:3000/beasts/6` | Returns all information related to Beast with `id=6` | 200 |
 | GET    | `localhost:3000/beasts?name=Mis` | Returns a Beast by `name` or `name ilike?` => 'Misty' | 200 |
 | GET    | `localhost:3000/beasts?page=4` | Returns a list of 10 Beasts per page | 200 |
-
 | POST   | `localhost:3000/beasts?daemon=shadow cat&breed=sabertooth&name=scud&age=666&desc=a foul hunter` | Adds a Beast to the database => `daemon: shadow cat`, `breed: sabertooth`, `name: scud`, `age: 666`, `desc: "a foul hunter"`, `available: true` => If `POST` is successful, returns database object for newly created Beast. | 201 |
-
 | PUT/PATCH | `localhost:3000/beasts/183?name=scud the slug` | Updates the name for a Beast with `id=183`. If PUT/PATCH is successful, returns database object for newly updated Beast. | 200 |
-
 | DELETE | `localhost:3000/beasts/183` | Deletes the Beast with `id=183` from database | 200 |
 
 ## Common Mistakes
