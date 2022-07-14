@@ -1,6 +1,6 @@
 # Beasts of War - Animal Shelter API
 
-#### An Independent Project for Ruby on Rails - Building an API. 
+#### Ruby on Rails - Building an API. 
 ##### Exercising our skills in building API endpoints, adding routes, concerns, modules, handling exceptions and adding success messages. Passing parameters into a GET route, utilizing FactoryBot for DRY and thorough testing of the Rails API. Providing CRUD functionality with proper documentation.
 
 #### By Rosie Gardner
@@ -18,6 +18,7 @@
 * Will_Paginate
 * Shoulda-Matchers
 * FactoryBot
+* SimpleCov
 
 ## Setup/Installation Requirements
 
